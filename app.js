@@ -2,7 +2,6 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const port = 3000;
 
 // Configurar EJS como el motor de plantillas
 app.set('view engine', 'ejs');
@@ -29,6 +28,10 @@ app.get('/poke', (req, res) => {
   res.render('pokeApi');
 });
 
-app.listen(port, () => {
-  console.log(`Servidor escuchando en http://localhost:${port}`);
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`SERVER UP running on port ${PORT}`);
 });
+
