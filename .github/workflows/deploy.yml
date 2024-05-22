@@ -10,18 +10,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
         with:
           fetch-depth: 0
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-            node-version: '20'
+            node-version: '16'
 
       - name: Deploy to Heroku
         if: github.event_name == 'push'
-        uses: akhileshns/heroku-deploy@v4
+        uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}  # Variable de entorno secreta con la API key de Heroku
           heroku_app_name: consumoapi   # Nombre de tu aplicación en Heroku
