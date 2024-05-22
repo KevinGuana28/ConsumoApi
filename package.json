@@ -70,8 +70,10 @@
     "vary": "^1.1.2"
   },
   "scripts": {
-    "start": "nodemon app.js"
-  },
+    "start": "node app.js", 
+    "dev": "nodemon app.js" 
+  }
+  ,
   "engines": {
     "node": "14.x",
     "npm": "6.x"
